@@ -1,0 +1,661 @@
+[{
+  "_id": {
+    "$oid": "618796037419ca7b91ec61eb"
+  },
+  "userID": {
+    "$oid": "6186d342d15aca3086525d28"
+  },
+  "type": "expense",
+  "description": "shoping",
+  "amount": 16,
+  "date": {
+    "$date": "2021-12-02T21:00:00Z"
+  },
+  "createdAt": {
+    "$date": "2021-11-07T09:01:55.311Z"
+  },
+  "updatedAt": {
+    "$date": "2021-11-10T10:37:00.421Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6187965f7419ca7b91ec61f3"
+  },
+  "userID": {
+    "$oid": "6186d342d15aca3086525d28"
+  },
+  "type": "income",
+  "description": "from salary november",
+  "amount": 250,
+  "date": {
+    "$date": "2021-11-07T09:03:27.840Z"
+  },
+  "createdAt": {
+    "$date": "2021-11-07T09:03:27.853Z"
+  },
+  "updatedAt": {
+    "$date": "2021-11-07T09:03:27.853Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61962af5f0d341fe3a26ef5d"
+  },
+  "userID": {
+    "$oid": "61960a40f0d341fe3a26ee92"
+  },
+  "type": "income",
+  "description": "from family",
+  "amount": 97,
+  "date": {
+    "$date": "2021-11-18T10:28:55.720Z"
+  },
+  "createdAt": {
+    "$date": "2021-11-18T10:29:09.453Z"
+  },
+  "updatedAt": {
+    "$date": "2021-11-18T10:29:09.453Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61962b06f0d341fe3a26ef62"
+  },
+  "userID": {
+    "$oid": "61960a40f0d341fe3a26ee92"
+  },
+  "type": "expense",
+  "description": "bashal",
+  "amount": 7,
+  "date": {
+    "$date": "2021-11-18T10:29:12.425Z"
+  },
+  "createdAt": {
+    "$date": "2021-11-18T10:29:26.899Z"
+  },
+  "updatedAt": {
+    "$date": "2021-11-18T10:29:26.899Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6198f7501c6a13f175191d4d"
+  },
+  "userID": {
+    "$oid": "6198f6d41c6a13f175191d45"
+  },
+  "type": "income",
+  "description": "salary",
+  "amount": 100,
+  "date": {
+    "$date": "2021-11-20T13:25:12.115Z"
+  },
+  "createdAt": {
+    "$date": "2021-11-20T13:25:36.927Z"
+  },
+  "updatedAt": {
+    "$date": "2021-11-20T13:25:36.927Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6198f7881c6a13f175191d57"
+  },
+  "userID": {
+    "$oid": "6198f6d41c6a13f175191d45"
+  },
+  "type": "expense",
+  "description": "internet",
+  "amount": 20,
+  "date": {
+    "$date": "2021-11-20T13:26:17.520Z"
+  },
+  "createdAt": {
+    "$date": "2021-11-20T13:26:32.015Z"
+  },
+  "updatedAt": {
+    "$date": "2021-11-20T13:26:32.015Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6199e90a3eb8976a9dcf0b14"
+  },
+  "userID": {
+    "$oid": "6199e8bc3eb8976a9dcf0b0d"
+  },
+  "type": "income",
+  "description": "save money",
+  "amount": 260,
+  "date": {
+    "$date": "2021-11-21T06:35:58.506Z"
+  },
+  "createdAt": {
+    "$date": "2021-11-21T06:36:58.500Z"
+  },
+  "updatedAt": {
+    "$date": "2021-11-21T06:36:58.500Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "619cdce63d543299698e38df"
+  },
+  "userID": {
+    "$oid": "6199e8bc3eb8976a9dcf0b0d"
+  },
+  "type": "expense",
+  "description": "waxan u tuuray aso jogo bakaro ",
+  "amount": 40,
+  "date": {
+    "$date": "2021-11-22T21:00:00Z"
+  },
+  "createdAt": {
+    "$date": "2021-11-23T12:21:58.056Z"
+  },
+  "updatedAt": {
+    "$date": "2021-11-23T12:26:38.299Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "619cf3563d543299698e3913"
+  },
+  "userID": {
+    "$oid": "6199e8bc3eb8976a9dcf0b0d"
+  },
+  "type": "expense",
+  "description": "wuxu qatay dhaman",
+  "amount": 220,
+  "date": {
+    "$date": "2021-11-23T13:57:15.375Z"
+  },
+  "createdAt": {
+    "$date": "2021-11-23T13:57:42.441Z"
+  },
+  "updatedAt": {
+    "$date": "2021-11-23T13:57:42.441Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61a1e90f9726cb92118564ca"
+  },
+  "userID": {
+    "$oid": "61a1e8c89726cb92118564c2"
+  },
+  "type": "income",
+  "description": "salary",
+  "amount": 200,
+  "date": {
+    "$date": "2021-11-27T08:14:45.886Z"
+  },
+  "createdAt": {
+    "$date": "2021-11-27T08:15:11.040Z"
+  },
+  "updatedAt": {
+    "$date": "2021-11-27T08:15:11.040Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61a1e9489726cb92118564d3"
+  },
+  "userID": {
+    "$oid": "61a1e8c89726cb92118564c2"
+  },
+  "type": "expense",
+  "description": "internet",
+  "amount": 20,
+  "date": {
+    "$date": "2021-11-27T08:15:46.702Z"
+  },
+  "createdAt": {
+    "$date": "2021-11-27T08:16:08.543Z"
+  },
+  "updatedAt": {
+    "$date": "2021-11-27T08:16:08.543Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b4494cd4a7d8726b6d81bd"
+  },
+  "userID": {
+    "$oid": "61b4487ed4a7d8726b6d81b5"
+  },
+  "type": "income",
+  "description": "free lancing",
+  "amount": 9000,
+  "date": {
+    "$date": "2021-12-11T06:45:37.261Z"
+  },
+  "createdAt": {
+    "$date": "2021-12-11T06:46:36.201Z"
+  },
+  "updatedAt": {
+    "$date": "2021-12-11T06:46:36.201Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b44995d4a7d8726b6d81c6"
+  },
+  "userID": {
+    "$oid": "61b4487ed4a7d8726b6d81b5"
+  },
+  "type": "expense",
+  "description": "transportation",
+  "amount": 100,
+  "date": {
+    "$date": "2021-12-11T06:47:24.771Z"
+  },
+  "createdAt": {
+    "$date": "2021-12-11T06:47:49.382Z"
+  },
+  "updatedAt": {
+    "$date": "2021-12-11T06:47:49.382Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b44c21d4a7d8726b6d81d5"
+  },
+  "userID": {
+    "$oid": "61b4487ed4a7d8726b6d81b5"
+  },
+  "type": "expense",
+  "description": "aroos",
+  "amount": 8900,
+  "date": {
+    "$date": "2021-12-11T06:56:46.240Z"
+  },
+  "createdAt": {
+    "$date": "2021-12-11T06:58:41.021Z"
+  },
+  "updatedAt": {
+    "$date": "2021-12-11T06:58:41.021Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b4503cd4a7d8726b6d81f2"
+  },
+  "userID": {
+    "$oid": "61b4487ed4a7d8726b6d81b5"
+  },
+  "type": "income",
+  "description": "e-comerce web",
+  "amount": 5000,
+  "date": {
+    "$date": "2021-12-11T07:15:32.425Z"
+  },
+  "createdAt": {
+    "$date": "2021-12-11T07:16:12.575Z"
+  },
+  "updatedAt": {
+    "$date": "2021-12-11T07:16:12.575Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b45066d4a7d8726b6d81f7"
+  },
+  "userID": {
+    "$oid": "61b4487ed4a7d8726b6d81b5"
+  },
+  "type": "expense",
+  "description": "transportation",
+  "amount": 120,
+  "date": {
+    "$date": "2021-12-11T07:16:15.612Z"
+  },
+  "createdAt": {
+    "$date": "2021-12-11T07:16:54.128Z"
+  },
+  "updatedAt": {
+    "$date": "2021-12-11T07:16:54.128Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b45071d4a7d8726b6d81fb"
+  },
+  "userID": {
+    "$oid": "61b4487ed4a7d8726b6d81b5"
+  },
+  "type": "expense",
+  "description": "transportation",
+  "amount": 90,
+  "date": {
+    "$date": "2021-12-11T07:16:54.156Z"
+  },
+  "createdAt": {
+    "$date": "2021-12-11T07:17:05.623Z"
+  },
+  "updatedAt": {
+    "$date": "2021-12-11T07:17:05.623Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b45085d4a7d8726b6d81ff"
+  },
+  "userID": {
+    "$oid": "61b4487ed4a7d8726b6d81b5"
+  },
+  "type": "expense",
+  "description": "transportation",
+  "amount": 80,
+  "date": {
+    "$date": "2020-12-11T07:17:05Z"
+  },
+  "createdAt": {
+    "$date": "2021-12-11T07:17:25.695Z"
+  },
+  "updatedAt": {
+    "$date": "2021-12-11T07:17:25.695Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ed00cadda19535bdb664e6"
+  },
+  "userID": {
+    "$oid": "61ed00a8dda19535bdb664df"
+  },
+  "type": "income",
+  "description": "salary",
+  "amount": 800,
+  "date": {
+    "$date": "2022-01-22T21:00:00Z"
+  },
+  "createdAt": {
+    "$date": "2022-01-23T07:16:26.010Z"
+  },
+  "updatedAt": {
+    "$date": "2022-01-23T07:18:32.430Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ed00eddda19535bdb664ef"
+  },
+  "userID": {
+    "$oid": "61ed00a8dda19535bdb664df"
+  },
+  "type": "expense",
+  "description": "rent expense",
+  "amount": 100,
+  "date": {
+    "$date": "2022-01-22T21:00:00Z"
+  },
+  "createdAt": {
+    "$date": "2022-01-23T07:17:01.728Z"
+  },
+  "updatedAt": {
+    "$date": "2022-01-23T07:17:51.846Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ed010fdda19535bdb664f3"
+  },
+  "userID": {
+    "$oid": "61ed00a8dda19535bdb664df"
+  },
+  "type": "expense",
+  "description": "restaurent",
+  "amount": 150,
+  "date": {
+    "$date": "2022-01-23T07:17:01.761Z"
+  },
+  "createdAt": {
+    "$date": "2022-01-23T07:17:35.561Z"
+  },
+  "updatedAt": {
+    "$date": "2022-01-23T07:17:35.561Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ed6c98dda19535bdb66590"
+  },
+  "userID": {
+    "$oid": "6195fbf3eca44e9921ffe450"
+  },
+  "type": "income",
+  "description": "system",
+  "amount": 400,
+  "date": {
+    "$date": "2022-01-23T14:55:49.470Z"
+  },
+  "createdAt": {
+    "$date": "2022-01-23T14:56:24.833Z"
+  },
+  "updatedAt": {
+    "$date": "2022-01-23T14:56:24.833Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ee67a93afedb4ea4deabdb"
+  },
+  "userID": {
+    "$oid": "6195fbf3eca44e9921ffe450"
+  },
+  "type": "expense",
+  "description": "bashal",
+  "amount": 5,
+  "date": {
+    "$date": "2022-01-24T08:47:32.188Z"
+  },
+  "createdAt": {
+    "$date": "2022-01-24T08:47:37.748Z"
+  },
+  "updatedAt": {
+    "$date": "2022-01-24T08:47:37.748Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ee67ef3afedb4ea4deabe3"
+  },
+  "userID": {
+    "$oid": "6195fbf3eca44e9921ffe450"
+  },
+  "type": "expense",
+  "description": "bashal",
+  "amount": 1,
+  "date": {
+    "$date": "2022-01-24T08:48:39.732Z"
+  },
+  "createdAt": {
+    "$date": "2022-01-24T08:48:47.639Z"
+  },
+  "updatedAt": {
+    "$date": "2022-01-24T08:48:47.639Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ee67f53afedb4ea4deabe7"
+  },
+  "userID": {
+    "$oid": "6195fbf3eca44e9921ffe450"
+  },
+  "type": "expense",
+  "description": "bashal",
+  "amount": 5,
+  "date": {
+    "$date": "2022-01-24T08:48:47.672Z"
+  },
+  "createdAt": {
+    "$date": "2022-01-24T08:48:53.135Z"
+  },
+  "updatedAt": {
+    "$date": "2022-01-24T08:48:53.135Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ee67fb3afedb4ea4deabeb"
+  },
+  "userID": {
+    "$oid": "6195fbf3eca44e9921ffe450"
+  },
+  "type": "expense",
+  "description": "bashal",
+  "amount": 5,
+  "date": {
+    "$date": "2022-01-24T08:48:53.167Z"
+  },
+  "createdAt": {
+    "$date": "2022-01-24T08:48:59.016Z"
+  },
+  "updatedAt": {
+    "$date": "2022-01-24T08:48:59.016Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ee68003afedb4ea4deabef"
+  },
+  "userID": {
+    "$oid": "6195fbf3eca44e9921ffe450"
+  },
+  "type": "expense",
+  "description": "bashal",
+  "amount": 5,
+  "date": {
+    "$date": "2022-01-24T08:48:59.057Z"
+  },
+  "createdAt": {
+    "$date": "2022-01-24T08:49:04.402Z"
+  },
+  "updatedAt": {
+    "$date": "2022-01-24T08:49:04.402Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ee68063afedb4ea4deabf3"
+  },
+  "userID": {
+    "$oid": "6195fbf3eca44e9921ffe450"
+  },
+  "type": "expense",
+  "description": "bashal",
+  "amount": 5,
+  "date": {
+    "$date": "2022-01-24T08:49:04.438Z"
+  },
+  "createdAt": {
+    "$date": "2022-01-24T08:49:10.194Z"
+  },
+  "updatedAt": {
+    "$date": "2022-01-24T08:49:10.194Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ee680a3afedb4ea4deabf7"
+  },
+  "userID": {
+    "$oid": "6195fbf3eca44e9921ffe450"
+  },
+  "type": "expense",
+  "description": "bashal",
+  "amount": 5,
+  "date": {
+    "$date": "2022-01-24T08:49:10.225Z"
+  },
+  "createdAt": {
+    "$date": "2022-01-24T08:49:14.802Z"
+  },
+  "updatedAt": {
+    "$date": "2022-01-24T08:49:14.802Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ee680f3afedb4ea4deabfb"
+  },
+  "userID": {
+    "$oid": "6195fbf3eca44e9921ffe450"
+  },
+  "type": "expense",
+  "description": "bashal",
+  "amount": 5,
+  "date": {
+    "$date": "2022-01-24T08:49:14.834Z"
+  },
+  "createdAt": {
+    "$date": "2022-01-24T08:49:19.526Z"
+  },
+  "updatedAt": {
+    "$date": "2022-01-24T08:49:19.526Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ee68133afedb4ea4deabff"
+  },
+  "userID": {
+    "$oid": "6195fbf3eca44e9921ffe450"
+  },
+  "type": "expense",
+  "description": "bashal",
+  "amount": 5,
+  "date": {
+    "$date": "2022-01-24T08:49:19.556Z"
+  },
+  "createdAt": {
+    "$date": "2022-01-24T08:49:23.883Z"
+  },
+  "updatedAt": {
+    "$date": "2022-01-24T08:49:23.883Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ee68173afedb4ea4deac03"
+  },
+  "userID": {
+    "$oid": "6195fbf3eca44e9921ffe450"
+  },
+  "type": "expense",
+  "description": "bashal",
+  "amount": 5,
+  "date": {
+    "$date": "2022-01-24T08:49:23.914Z"
+  },
+  "createdAt": {
+    "$date": "2022-01-24T08:49:27.958Z"
+  },
+  "updatedAt": {
+    "$date": "2022-01-24T08:49:27.958Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ee68553afedb4ea4deac13"
+  },
+  "userID": {
+    "$oid": "6195fbf3eca44e9921ffe450"
+  },
+  "type": "income",
+  "description": "bashal",
+  "amount": 5,
+  "date": {
+    "$date": "2022-01-24T08:50:22.131Z"
+  },
+  "createdAt": {
+    "$date": "2022-01-24T08:50:29.140Z"
+  },
+  "updatedAt": {
+    "$date": "2022-01-24T08:50:29.140Z"
+  },
+  "__v": 0
+}]
