@@ -4,55 +4,83 @@ const Joi = require("joi");
 
 const UserSchema = new mongoose.Schema(
   {
+    avatar: {
+      type: String,
+    },
     name: {
       required: true,
       type: String,
     },
-    avatar: {
+    email: {
       type: String,
+      required: true,
     },
     phone: {
       type: String,
       required: true,
     },
-    pin: {
+    username: {
+      type: String,
+      required: true,
+    },
+    password: {
       type: String,
       required: true,
     },
     accountNo: {
-      required: true,
       type: Number,
-    },
-    isAdmin: {
-      type: Boolean,
-      default: false,
+      required: true,
     },
   },
   { timestamps: true }
 );
-function validateUsers(user) {
+
+const validateUsers = (user) => {
   const userValidation = Joi.object({
+    avatar: Joi.string(),
     name: Joi.string().min(3).required(),
-    // accountNo:Joi.number().min(10).required(),
+    email: Joi.string().email().required(),
     phone: Joi.number().min(10).required(),
-    pin: Joi.string().required(),
+    username: Joi.string().required(),
+    password: Joi.string().min(6).required(),
   });
   return userValidation.validate(user);
-}
+};
+
+const updateValidation = (user) => {
+  const updateValidation = Joi.object({
+    avatar: Joi.string(),
+    name: Joi.string().min(3).required(),
+    email: Joi.string().email().required(),
+    phone: Joi.number().min(10).required(),
+    username: Joi.string().required(),
+  });
+  return updateValidation.validate(user);
+};
+
+const validateUserLogin = (user) => {
+  const loginValidation = Joi.object({
+    username: Joi.string().required(),
+    password: Joi.string().required(),
+  });
+  return loginValidation.validate(user);
+};
+
 UserSchema.methods.generateAuthToken = async function () {
   const token = jwt.sign(
     {
       _id: this._id,
-      name: this.name,
-      phone: this.phone,
-      accountNo: this.accountNo,
-      isAdmin: this.isAdmin,
     },
     process.env.SECRET_ACCESS_TOKEN
   );
   return token;
 };
+
 const UserModel = mongoose.model("users", UserSchema);
 
-exports.UserModel = UserModel;
-exports.validateUsers = validateUsers;
+module.exports = {
+  UserModel,
+  validateUsers,
+  validateUserLogin,
+  updateValidation,
+};
