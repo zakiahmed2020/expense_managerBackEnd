@@ -9,7 +9,7 @@ const {
 const { userBalance } = require("./Statements.router");
 
 // get user information by passing user id,and transection type expense or income
-router.get("/userInfo/:userID/:Transtype", async function (req, res) {
+router.get("/usertransactions/:userID/:Transtype", async function (req, res) {
   try {
     let { userID, Transtype } = req.params;
     console.log(userID, Transtype);
@@ -30,7 +30,7 @@ router.get("/userInfo/:userID/:Transtype", async function (req, res) {
   }
 });
 
-router.post("/", async function (req, res) {
+router.post("/usertransactions", async function (req, res) {
   // let body = {...req.body,t_name:req.body.name}
   // delete body.name
   const { error } = validateTransections(req.body);
@@ -70,7 +70,7 @@ router.post("/", async function (req, res) {
   }
 });
 
-router.put("/:id", async (req, res) => {
+router.put("/usertransactions/:id", async (req, res) => {
   const { id } = req.params;
   // const checkingID = await transModel.findById(id.trim());
   // if(!checkingID) return res.status(404).send("given id was not found");
