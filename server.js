@@ -14,8 +14,12 @@ app.use(express.json());
 
 connectedToDB();
 
+app.get("/", function (req, res) {
+  res.send("Welcome to the API");
+});
+
 // routes
-app.use("/api/transection", transections);
+app.use("/api/transactions", transections);
 app.use("/api/statements", statements.router);
 statements.userBalance();
 app.use("/api/users", users);
