@@ -1,9 +1,10 @@
 const mongoose = require("mongoose");
 
 async function connectedToDB() {
-  let URL = process.env.mongodb_URL;
   try {
-    await mongoose.connect(`${URL}`);
+    await mongoose.connect(
+      `mongodb+srv://xman:x_1258@cluster0.t0zb7.mongodb.net/expenseManager`
+    );
     console.log("Connected to MongoDB .....");
   } catch (e) {
     console.error(`Failed To connect to MongoDB....`, e);
