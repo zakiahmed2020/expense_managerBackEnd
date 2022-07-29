@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const Joi = require("joi");
+import mongoose from "mongoose";
+import Joi from "joi";
 
 const transectionsSchema = new mongoose.Schema(
   {
@@ -10,7 +10,12 @@ const transectionsSchema = new mongoose.Schema(
     type: {
       required: true,
       type: String,
-      enum: ["expense", "income"],
+      enum: ["Expense", "Income"],
+    },
+
+    title: {
+      required: true,
+      type: String,
     },
 
     description: {
@@ -32,14 +37,13 @@ const transectionsSchema = new mongoose.Schema(
 function validateTransections(user) {
   const userValidation = Joi.object({
     userID: Joi.string().required(),
+    title: Joi.string().required(),
     type: Joi.string().required(),
     description: Joi.string().required(),
     amount: Joi.number().required(),
-    date: Joi.date(),
   });
   return userValidation.validate(user);
 }
 const transModel = mongoose.model("transection", transectionsSchema);
 
-exports.validateTransections = validateTransections;
-exports.transModel = transModel;
+export { transModel, validateTransections };
