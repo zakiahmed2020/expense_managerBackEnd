@@ -1,32 +1,33 @@
-const Auth = require("../Middlewares/Auth.middleware");
-const admin = require("../Middlewares/Admin.middleware");
-const express = require("express");
-const router = express.Router();
-const {
+import Auth from "../Middlewares/Auth.middleware.js";
+import express from "express";
+import {
   transModel,
   validateTransections,
-} = require("../Models/Transactions.model");
-const { userBalance } = require("./Statements.router");
+} from "../Models/Transactions.model.js";
+import Statements from "./Statements.router.js";
+
+const router = express.Router();
 
 // get user information by passing user id,and transection type expense or income
 router.get("/usertransactions/:userID/:Transtype", async function (req, res) {
   try {
     let { userID, Transtype } = req.params;
     console.log(userID, Transtype);
-    let Transection = await transModel.find({
+    let transection = await transModel.find({
       userID: userID,
-      _id: Transtype,
+      type: Transtype,
     });
     res.send({
       status: 200,
       message: "Successfull",
-      transaction: Transection,
+      transaction: transection,
     });
   } catch (e) {
     res.send({
       status: 400,
       message: `Error: ${e}`,
     });
+    // console.error(e);
   }
 });
 
@@ -39,12 +40,12 @@ router.post("/usertransactions", async function (req, res) {
   const transInfo = new transModel({
     userID: req.body.userID,
     type: req.body.type,
+    title: req.body.title,
     description: req.body.description,
     amount: req.body.amount,
-    date: req.body.date,
   });
   //it comes from fucntion resturn it returns object;
-  let balance = await userBalance(transInfo.userID);
+  let balance = await Statements.userBalance(transInfo.userID);
   // object laso celiyay waxa ka mid UserBalance object distructor
   const { UserBalance } = balance;
   try {
@@ -109,4 +110,4 @@ router.delete("/:id", async function (req, res) {
     });
   }
 });
-module.exports = router;
+export default router;
