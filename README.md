@@ -2,8 +2,8 @@
 Expense Manager is Restful API which is used to manage expenses and income.
 
 ### Overview:
-* Nodejs JavaScript.
-* Authentication using JWT.
+* this API was builded Nodejs and MongoDB.
+* it uses Authentication JWT to protect the API.
 * User can Login through email and password and PIN.
 * Get all expenses and income.
 
