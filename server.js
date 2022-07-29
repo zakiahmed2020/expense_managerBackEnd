@@ -1,13 +1,15 @@
-const mongoose = require("mongoose");
-const express = require("express");
+import mongoose from "mongoose";
+import express from "express";
+import cors from "cors";
+import dotenv from "dotenv";
+import connectedToDB from "./config/db.js";
+import auth from "./Routers/Auth.router.js";
+import users from "./Routers/Users.router.js";
+import transections from "./Routers/Transactions.router.js";
+import statements from "./Routers/Statements.router.js";
 const app = express();
-const cors = require("cors");
-const connectedToDB = require("./config/db");
-const transections = require("./Routers/Transactions.router");
-const statements = require("./Routers/Statements.router");
-const users = require("./Routers/Users.router");
-const auth = require("./Routers/Auth.router");
-require("dotenv").config();
+
+dotenv.config();
 
 app.use(cors());
 app.use(express.json());
@@ -19,11 +21,11 @@ app.get("/", function (req, res) {
 });
 
 // routes
+app.use("/api/auth", auth);
+app.use("/api/users", users);
 app.use("/api/transactions", transections);
 app.use("/api/statements", statements.router);
 statements.userBalance();
-app.use("/api/users", users);
-app.use("/api/auth", auth);
 
 // listening port
 const port = process.env.PORT || 4400;
