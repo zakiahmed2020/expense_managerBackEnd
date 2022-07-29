@@ -40,8 +40,8 @@ after you get access token, you can call any endpoint of this API, but you need 
 you can contribute this API by creating a pull request on this repository by forking, adding your code and submit a pull request, but make sure to add new ideas and features.
 
 ### Authors
-* [Zaki Ahmed]("https://www.github.com/zakiahmed2020")
-* [Abdorizak Abdalla]("https://www.github.com/abdorizak")
+* [Zaki Ahmed](https://www.github.com/zakiahmed2020)
+* [Abdorizak Abdalla](https://www.github.com/abdorizak)
 
 ### License
 * [MIT License](#license)
