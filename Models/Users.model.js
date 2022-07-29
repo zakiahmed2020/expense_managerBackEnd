@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
-const jwt = require("jsonwebtoken");
-const Joi = require("joi");
+import mongoose from "mongoose";
+import jwt from "jsonwebtoken";
+import Joi from "joi";
 
 const UserSchema = new mongoose.Schema(
   {
@@ -27,6 +27,10 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    pin_Number: {
+      type: Number,
+      required: true,
+    },
     accountNo: {
       type: Number,
       required: true,
@@ -43,6 +47,7 @@ const validateUsers = (user) => {
     phone: Joi.number().min(10).required(),
     username: Joi.string().required(),
     password: Joi.string().min(6).required(),
+    pin_Number: Joi.number().required(),
   });
   return userValidation.validate(user);
 };
@@ -66,6 +71,13 @@ const validateUserLogin = (user) => {
   return loginValidation.validate(user);
 };
 
+const validateUserPin = (user) => {
+  const loginValidation = Joi.object({
+    pin_Number: Joi.number().required(),
+  });
+  return loginValidation.validate(user);
+};
+
 UserSchema.methods.generateAuthToken = async function () {
   const token = jwt.sign(
     {
@@ -78,9 +90,10 @@ UserSchema.methods.generateAuthToken = async function () {
 
 const UserModel = mongoose.model("users", UserSchema);
 
-module.exports = {
+export {
   UserModel,
   validateUsers,
+  validateUserPin,
   validateUserLogin,
   updateValidation,
 };

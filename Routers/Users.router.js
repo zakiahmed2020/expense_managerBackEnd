@@ -1,16 +1,17 @@
-const fs = require("fs");
-const mongoose = require("mongoose");
-const _ = require("lodash");
-const express = require("express");
-const bcrypt = require("bcrypt");
-const router = express.Router();
-// const auth = require("../Middlewares/Auth.middleware");
-const {
+import fs from "fs";
+import mongoose from "mongoose";
+import _ from "lodash";
+import bcrypt from "bcrypt";
+import upload from "../utils/multer.js";
+import express from "express";
+import auth from "../Middlewares/Auth.middleware.js";
+import {
   UserModel,
   validateUsers,
   updateValidation,
-} = require("../Models/Users.model");
-const upload = require("../Utils/Multer");
+} from "../Models/Users.model.js";
+
+const router = express.Router();
 
 router.get("/me", async function (req, res) {
   const user = await UserModel.findById(req.user._id).select("-pin");
@@ -66,6 +67,12 @@ router.post("/create-user", upload.single("avatar"), async function (req, res) {
       message: `username: ${checkUsername.username} is already exists...`,
     });
 
+  const chechPin = await UserModel.findOne({ pin_Number: req.body.pin_Number });
+  if (chechPin)
+    return res.send({
+      message: `Please make sure to put a different pin number`,
+    });
+
   // get avatar in file
   const avatar = req.file ? req.file.path : "uploads\\default.png";
 
@@ -85,6 +92,7 @@ router.post("/create-user", upload.single("avatar"), async function (req, res) {
       phone: req.body.phone,
       username: req.body.username,
       password: req.body.password,
+      pin_Number: req.body.pin_Number,
       accountNo: AccountNo,
     });
     const salt = await bcrypt.genSalt(10);
@@ -165,44 +173,73 @@ router.put("/update-userinfo/:id", async (req, res) => {
     const id = await UserModel.findById(req.params.id);
     if (!id) return res.status(404).send({ message: "Not Found" });
 
-    // const checkUsername = await UserModel.findOne({
-    //   username: req.body.username,
-    // }).lean();
+    const checkUsername = await UserModel.findOne({
+      username: req.body.username,
+    }).lean();
 
-    // if (checkUsername) {
-    //   res.send({
-    //     message: `username: ${checkUsername.username} is already exists...`,
-    //   });
-    // } else {
+    if (checkUsername) {
+      res.send({
+        message: `username: ${checkUsername.username} is already exists...`,
+      });
+    } else {
+      // get avatar in file. check the file has path.
+      const avatar = req.file ? req.file.path : "uploads\\default.png";
 
-    // get avatar in file. check the file has path.
-    const avatar = req.file ? req.file.path : "uploads\\default.png";
+      // delete old image. if is not equal default.
+      if (id.avatar !== "uploads\\default.png") {
+        fs.unlink(id.avatar, function (err) {
+          if (err) return console.log(err);
+          // if no error, file has been deleted successfully
+          console.log("File deleted!");
+        });
+      }
 
-    // delete old image. if is not equal default.
-    if (id.avatar !== "uploads\\default.png") {
-      fs.unlink(id.avatar, function (err) {
-        if (err) return console.log(err);
-        // if no error, file has been deleted successfully
-        console.log("File deleted!");
+      const _ = await UserModel.findByIdAndUpdate(
+        req.params.id,
+        {
+          avatar: avatar,
+          name: req.body.name,
+          email: req.body.email,
+          phone: req.body.phone,
+          username: req.body.username,
+        },
+        { new: true }
+      );
+      res.send({
+        status: 200,
+        message: "Updated Successfully",
       });
     }
+  } catch (e) {
+    res.send({ status: 404, message: `Error: ${e}` });
+  }
+});
 
+// Change password with check old password
+router.put("/change-password/:id", async (req, res) => {
+  const { error } = changePasswordValidation(req.body);
+  if (error)
+    return res.status(404).send({ message: `${error.details[0].message}` });
+  try {
+    const id = await UserModel.findById(req.params.id);
+    if (!id) return res.status(404).send({ message: "Not Found" });
+  } catch (e) {
+    res.send({ status: 404, message: `Error: ${e}` });
+  }
+  try {
+    const salt = await bcrypt.genSalt(10);
+    const pcript_pin = await bcrypt.hash(req.body.pin, salt);
     const _ = await UserModel.findByIdAndUpdate(
       req.params.id,
       {
-        avatar: avatar,
-        name: req.body.name,
-        email: req.body.email,
-        phone: req.body.phone,
-        username: req.body.username,
+        password: pcript_pin,
       },
       { new: true }
     );
     res.send({
       status: 200,
-      message: "Updated Successfully",
+      message: "Password Updated Successfully",
     });
-    // }
   } catch (e) {
     res.send({ status: 404, message: `Error: ${e}` });
   }
@@ -255,4 +292,4 @@ router.put("/update-userinfo/:id", async (req, res) => {
 //   }
 // });
 
-module.exports = router;
+export default router;
