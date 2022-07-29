@@ -1,7 +1,7 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 async function connectedToDB() {
-  let db = process.env.Mongodb_LocalServer_URL;
+  let db = process.env.Mongodb_LocalServer;
   try {
     await mongoose.connect(db);
     console.log("Connected to MongoDB .....");
@@ -10,4 +10,4 @@ async function connectedToDB() {
   }
 }
 
-module.exports = connectedToDB;
+export default connectedToDB;
