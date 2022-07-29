@@ -21,10 +21,10 @@ app.get("/", function (req, res) {
 });
 
 // routes
-app.use("/api/auth", auth);
-app.use("/api/users", users);
-app.use("/api/transactions", transections);
-app.use("/api/statements", statements.router);
+app.use("/api/v1/auth", auth);
+app.use("/api/v1/users", users);
+app.use("/api/v1/transactions", transections);
+app.use("/api/v1/statements", statements.router);
 statements.userBalance();
 
 // listening port
