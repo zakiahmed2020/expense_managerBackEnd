@@ -1,4 +1,4 @@
-## Expense Manager Api v1.0
+# Expense Manager Api v1.0
 Expense Manager is Restful API which is used to manage expenses and income.
 
 ### Overview:
