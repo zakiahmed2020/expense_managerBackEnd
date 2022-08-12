@@ -9,7 +9,7 @@ Expense Manager is Restful API which is used to manage expenses and income.
 
 ### Installation:
 Make sure to have Nodejs and Mongodb in your system.
-* Download this repository and run the following command:
+* clone this repository and run the following command:
 ```terminal
 npm install
 ```
