@@ -12,7 +12,7 @@ function Auth(req, res, next) {
       if (err) {
         console.log(err);
         return res.status(401).send({
-          message: "InvalidToken",
+          message: "Invalid Token",
         });
       } else {
         req.user = decoded;
