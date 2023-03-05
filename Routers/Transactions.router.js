@@ -8,6 +8,24 @@ import Statements from "./Statements.router.js";
 
 const router = express.Router();
 
+router.get("/:id", async function (req, res) {
+  try {
+    let id = req.params.id;
+    const usertransactions = await transModel.find({ userID: id });
+    if (!usertransactions)
+      return res.send({ status: 404, message: "User not found" });
+    res.send({
+      status: 200,
+      message: "Successfull",
+      transaction: usertransactions,
+    });
+  } catch (e) {
+    res.send({
+      status: 500,
+      message: `Error: ${e}`,
+    });
+  }
+});
 // get user information by passing user id,and transection type expense or income
 router.get("/usertransactions/:userID/:Transtype", async function (req, res) {
   try {
@@ -24,10 +42,9 @@ router.get("/usertransactions/:userID/:Transtype", async function (req, res) {
     });
   } catch (e) {
     res.send({
-      status: 400,
+      status: 500,
       message: `Error: ${e}`,
     });
-    // console.error(e);
   }
 });
 
@@ -35,7 +52,7 @@ router.post("/usertransactions", async function (req, res) {
   // let body = {...req.body,t_name:req.body.name}
   // delete body.name
   const { error } = validateTransections(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
+  if (error) return res.status(400).send({ message: error.details[0].message });
 
   const transInfo = new transModel({
     userID: req.body.userID,
@@ -43,7 +60,9 @@ router.post("/usertransactions", async function (req, res) {
     title: req.body.title,
     description: req.body.description,
     amount: req.body.amount,
+    // date: req.body.date,
   });
+  console.log(transInfo);
   //it comes from fucntion resturn it returns object;
   let balance = await Statements.userBalance(transInfo.userID);
   // object laso celiyay waxa ka mid UserBalance object distructor
@@ -51,28 +70,30 @@ router.post("/usertransactions", async function (req, res) {
   try {
     // check garee hadii user TotalAmunt kisa uu ka yarhay amount hada uu la baxayo
     // check gare type hadii uu expense yahay
-    if (transInfo.type == "expense" && UserBalance < transInfo.amount) {
-      res.json({
+    if (transInfo.type == "Expense" && UserBalance < transInfo.amount) {
+      res.send({
+        status: 400,
         message:
           "Check Your Balance, Your Expense Amount is Higher than Your Balance.",
-        status: false,
       });
     } else {
       await transInfo.save();
-      res.json({
-        message: " successfully inserted.",
+      res.send({
         status: 200,
+        message: "Successfully.",
         info: transInfo,
       });
     }
   } catch (error) {
-    // res.send(error);
     console.log(error);
+    res.send({
+      status: 500,
+      message: `Error: ${error}`,
+    });
   }
 });
 
 router.put("/usertransactions/:id", async (req, res) => {
-  const { id } = req.params;
   // const checkingID = await transModel.findById(id.trim());
   // if(!checkingID) return res.status(404).send("given id was not found");
   // const getTransaction = transModel.findById((c) => c._id === parseInt(id));
