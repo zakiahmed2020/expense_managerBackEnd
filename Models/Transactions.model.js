@@ -7,6 +7,7 @@ const transectionsSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "users",
     },
+
     type: {
       required: true,
       type: String,
@@ -41,6 +42,7 @@ function validateTransections(user) {
     type: Joi.string().required(),
     description: Joi.string().required(),
     amount: Joi.number().required(),
+    date: Joi.string(),
   });
   return userValidation.validate(user);
 }
