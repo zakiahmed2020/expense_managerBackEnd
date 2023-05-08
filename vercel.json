@@ -1,7 +1,5 @@
 {
-  "version": 2.0,
-  "framework": "node",
-  "name": "Expense Manager",
+  "version": 2,
   "builds": [
     {
       "src": "server.js",
