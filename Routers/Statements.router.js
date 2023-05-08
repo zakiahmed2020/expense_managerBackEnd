@@ -127,7 +127,8 @@ router.get("/userIncome/:id", async function (req, res) {
     if (isEmpty(user_Income)) {
       res.send({
         status: 200,
-        userIncome: 0,
+        message: "this user does not have any income",
+        userIncome: [0],
       });
     } else {
       res.send({
@@ -162,7 +163,8 @@ router.get("/userExpense/:id", async (req, res) => {
     if (isEmpty(user_Expense)) {
       res.send({
         status: 200,
-        userExpense: 0,
+        message: "this user does not have any expense",
+        userExpense: [0],
       });
     } else {
       res.send({
