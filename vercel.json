@@ -1,0 +1,17 @@
+{
+  "version": "1.1",
+  "framework": "node",
+  "name": "Expense Manager",
+  "builds": [
+    {
+      "src": "server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/server.js"
+    }
+  ]
+}
