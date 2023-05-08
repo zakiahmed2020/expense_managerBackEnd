@@ -25,6 +25,10 @@ app.get("/", function (req, res) {
   res.send("Welcome to the API");
 });
 
+app.get("/api", function (req, res) {
+  res.send("Express API is running");
+});
+
 // routes
 app.use("/api/v1/auth", auth);
 app.use("/api/v1/users", users);
