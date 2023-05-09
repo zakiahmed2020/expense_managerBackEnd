@@ -2,7 +2,7 @@ import fs from "fs";
 import mongoose from "mongoose";
 import _ from "lodash";
 import bcrypt from "bcrypt";
-import upload from "../utils/multer.js";
+import upload from "../Utils/multer.js";
 import express from "express";
 import Auth from "../Middlewares/Auth.middleware.js";
 import {
@@ -98,7 +98,7 @@ router.post("/create-user", upload.single("avatar"), async function (req, res) {
       pin: req.body.pin,
       accountNo: AccountNo,
     });
-    
+
     const salt = await bcrypt.genSalt(10);
     userinfo.password = await bcrypt.hash(userinfo.password, salt);
     const result = await userinfo.save();
