@@ -27,7 +27,7 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    pin_Number: {
+    pin: {
       type: Number,
       required: true,
     },
@@ -47,7 +47,7 @@ const validateUsers = (user) => {
     phone: Joi.number().min(10).required(),
     username: Joi.string().required(),
     password: Joi.string().min(6).required(),
-    pin_Number: Joi.number().required(),
+    pin: Joi.number().required(),
   });
   return userValidation.validate(user);
 };
@@ -55,7 +55,7 @@ const validateUsers = (user) => {
 const updateValidation = (user) => {
   const updateValidation = Joi.object({
     avatar: Joi.string(),
-    name: Joi.string().min(3).required(),
+    name: Joi.string().min(3),
     email: Joi.string().email().required(),
     phone: Joi.number().min(10).required(),
     username: Joi.string().required(),
@@ -65,7 +65,7 @@ const updateValidation = (user) => {
 
 const validateUserLogin = (user) => {
   const loginValidation = Joi.object({
-    username: Joi.string().required(),
+    userCredential: Joi.string().required(),
     password: Joi.string().required(),
   });
   return loginValidation.validate(user);
@@ -73,7 +73,16 @@ const validateUserLogin = (user) => {
 
 const validateUserPin = (user) => {
   const loginValidation = Joi.object({
-    pin_Number: Joi.number().required(),
+    pin: Joi.number().required(),
+  });
+  return loginValidation.validate(user);
+};
+
+const ValidateChangePassword = (user) => {
+  const loginValidation = Joi.object({
+    oldpassword: Joi.string().min(6).required(),
+    newpassword: Joi.string().min(6).required(),
+    confirmpassword: Joi.string().min(6).required(),
   });
   return loginValidation.validate(user);
 };
@@ -95,5 +104,6 @@ export {
   validateUsers,
   validateUserPin,
   validateUserLogin,
+  ValidateChangePassword,
   updateValidation,
 };
