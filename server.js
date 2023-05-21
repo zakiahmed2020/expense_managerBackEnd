@@ -1,4 +1,3 @@
-import mongoose from "mongoose";
 import path from "path";
 import url from "url";
 import express from "express";
@@ -22,7 +21,9 @@ app.use(express.urlencoded({ extended: true }));
 connectedToDB();
 
 app.get("/", function (req, res) {
-  res.send("Welcome to the API");
+  res.send({
+    message: "Welcome to Express API",
+  });
 });
 
 app.get("/api", function (req, res) {
